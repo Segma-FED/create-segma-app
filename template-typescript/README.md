@@ -1,4 +1,4 @@
-# @segma/template-typescript
+# @create-segma-app/template-typescript
 
 ## 简介
 
@@ -7,27 +7,24 @@
 ## 仓库地址
 
 ```bash
-https://github.com/RanSatious/segma-template-typescript
+https://github.com/RanSatious/create-segma-app/tree/master/template-typescript
 ```
 
 ## 快速使用
 
 ```bash
 # 获取模板
-git clone https://github.com/RanSatious/segma-template-typescript.git my-ts-package --depth=1
+npm init segma-app my-ts-project --template typescript
 
-# 清除模板原有的 git 信息
-# linux
-rm -rf my-ts-package/.git
-# windows
-rd /S my-ts-package/.git
-
-# 重新初始化 git 仓库
-cd my-ts-package
+# 初始化 git 仓库
+cd my-ts-project
 git init
 
-# 使用 vscode 打开模板
-code ./
+# 安装依赖
+npm install
+
+# 进入开发模式
+npm run dev
 ```
 
 ## 开发模式
