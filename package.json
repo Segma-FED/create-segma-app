@@ -1,12 +1,29 @@
 {
-  "name": "create-segma-app",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "create-segma-app",
+    "version": "0.1.0",
+    "description": "segma frontend team's internal tool for creating app with different templates",
+    "main": "index.js",
+    "bin": {
+        "create-segma-app": "index.js",
+        "csa": "index.js"
+    },
+    "files": [
+        "index.js",
+        "template-*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RanSatious/create-segma-app.git"
+    },
+    "homepage": "https://github.com/RanSatious/create-segma-app",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "SatiousRan",
+    "license": "ISC",
+    "dependencies": {
+        "fs-extra": "^9.0.1",
+        "minimist": "^1.2.5"
+    }
 }
