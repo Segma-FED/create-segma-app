@@ -3,13 +3,15 @@ const path = require('path');
 const fs = require('fs-extra');
 const argv = require('minimist')(process.argv.slice(2));
 
+const ignoreFiles = ['node_modules', 'package.json', 'package-lock.json', 'yarn.lock', 'readme.md'];
+const renameFiles = {
+    _gitignore: '.gitignore',
+};
+
 async function init() {
     const targetDir = argv._[0] || '.';
     const cwd = process.cwd();
     const root = path.join(cwd, targetDir);
-    const renameFiles = {
-        _gitignore: '.gitignore',
-    };
     console.log(`Scaffolding project in ${root}...`);
 
     await fs.ensureDir(root);
@@ -30,7 +32,7 @@ async function init() {
     };
 
     const files = await fs.readdir(templateDir);
-    for (const file of files.filter(f => f !== 'package.json')) {
+    for (const file of files.filter(f => !ignoreFiles.includes(f.toLowerCase()))) {
         await write(file);
     }
 
