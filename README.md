@@ -25,9 +25,9 @@ $ npm run dev
 
 **可用的模板**
 
--   [ ] `vue` (default)
--   [ ] `vue3`
--   [ ] `typescript`
+-   [x] `vue` (default)
+-   [x] `vue3`
+-   [x] `typescript`
 
 使用指定的模板进行初始化：
 
