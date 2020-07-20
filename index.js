@@ -36,14 +36,14 @@ async function init() {
 
     const pkg = require(path.join(templateDir, `package.json`));
     pkg.name = path.basename(root);
-    await write('package.json', JSON.stringify(pkg, null, 2));
+    await write('package.json', JSON.stringify(pkg, null, 4));
 
     console.log(`\nDone. Now run:\n`);
     if (root !== cwd) {
         console.log(`  cd ${path.relative(cwd, root)}`);
     }
-    console.log(`  npm install (or \`yarn\`)`);
-    console.log(`  npm run dev (or \`yarn dev\`)`);
+    console.log(`  npm install`);
+    console.log(`  npm run dev`);
     console.log();
 }
 
