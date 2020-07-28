@@ -24,12 +24,11 @@ async function init() {
 
     const templateDir = path.join(__dirname, `template-${argv.t || argv.template || 'vue'}`);
     const write = async (file, content) => {
-        file = renameFiles[file] || file;
-        const targetPath = path.join(root, file);
+        const targetPath = path.join(root, renameFiles[file] || file);
         if (content) {
             await fs.writeFile(targetPath, content);
         } else {
-            console.log('writing', file);
+            console.log('writing', renameFiles[file] || file);
             await fs.copy(path.join(templateDir, file), targetPath);
         }
     };
