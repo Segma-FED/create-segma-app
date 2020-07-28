@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 const path = require('path');
+const childProcess = require('child_process');
 const fs = require('fs-extra');
 const argv = require('minimist')(process.argv.slice(2));
 
-const ignoreFiles = ['node_modules', 'package.json', 'package-lock.json', 'yarn.lock', 'readme.md'];
+const ignoreFiles = ['node_modules', 'package.json', 'package-lock.json', 'yarn.lock', 'readme.md', '.npmignore', 'csa.js'];
 const renameFiles = {
     _gitignore: '.gitignore',
 };
@@ -37,9 +38,14 @@ async function init() {
         await write(file);
     }
 
-    const pkg = require(path.join(templateDir, `package.json`));
-    pkg.name = path.basename(root);
-    await write('package.json', JSON.stringify(pkg, null, 4));
+    const scriptPath = path.join(templateDir, 'csa.js');
+    if (fs.existsSync(scriptPath)) {
+        childProcess.execSync(`TARGET=${root} node ${scriptPath}`, { encoding: 'utf-8' });
+    } else {
+        const pkg = require(path.join(templateDir, `package.json`));
+        pkg.name = path.basename(root);
+        await write('package.json', JSON.stringify(pkg, null, 4));
+    }
 
     console.log(`\nDone. Now run:\n`);
     if (root !== cwd) {
