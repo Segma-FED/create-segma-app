@@ -24,7 +24,8 @@ async function init() {
 
     const templateDir = path.join(__dirname, `template-${argv.t || argv.template || 'vue'}`);
     const write = async (file, content) => {
-        const targetPath = path.join(root, renameFiles[file] || file);
+        file = renameFiles[file] || file;
+        const targetPath = path.join(root, file);
         if (content) {
             await fs.writeFile(targetPath, content);
         } else {
