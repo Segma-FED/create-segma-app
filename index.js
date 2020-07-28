@@ -27,6 +27,7 @@ async function init() {
         if (content) {
             await fs.writeFile(targetPath, content);
         } else {
+            console.log('writing', file);
             await fs.copy(path.join(templateDir, file), targetPath);
         }
     };
