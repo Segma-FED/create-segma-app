@@ -40,7 +40,22 @@ async function init() {
 
     const scriptPath = path.join(templateDir, 'csa.js');
     if (fs.existsSync(scriptPath)) {
-        childProcess.execSync(`TARGET=${root} node ${scriptPath}`, { encoding: 'utf-8' });
+        await new Promise((resolve, reject) => {
+            childProcess.exec(
+                `node ${scriptPath}`,
+                {
+                    encoding: 'utf-8',
+                    env: {
+                        ...process.env,
+                        TARGET: root,
+                    },
+                },
+                (err, stdout) => {
+                    console.log(stdout);
+                    resolve();
+                }
+            );
+        });
     } else {
         const pkg = require(path.join(templateDir, `package.json`));
         pkg.name = path.basename(root);
