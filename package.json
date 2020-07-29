@@ -1,6 +1,6 @@
 {
     "name": "create-segma-app",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "segma frontend team's internal tool for creating app with different templates",
     "main": "index.js",
     "bin": {
