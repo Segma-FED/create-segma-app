@@ -45,3 +45,32 @@ $ npm init segma-app <project-name> --template typescript
 # or
 $ npm init segma-app <project-name> -t typescript
 ```
+
+## eol
+
+指定文件换行符。
+
+### auto `默认值`
+
+windows 下为 `crlf`，其他环境为 `lf`。
+
+```bash
+$ npm init segma-app <project-name>
+$ npm init segma-app <project-name> --eol auto
+```
+
+### lf
+
+`\n`
+
+```bash
+$ npm init segma-app <project-name> --eol lf
+```
+
+### crlf
+
+`\r\n`
+
+```bash
+$ npm init segma-app <project-name> --eol crlf
+```
