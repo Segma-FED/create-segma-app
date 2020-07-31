@@ -15,6 +15,7 @@ const eolMap = {
     crlf: '\r\n',
     auto: os.EOL,
 };
+const newline = /\r\n|\r|\n/g;
 
 async function init() {
     const targetDir = argv._[0] || '.';
@@ -42,7 +43,9 @@ async function init() {
 
         console.log(content ? 'writing' : 'copying', path.join(relative, renameFiles[file] || file));
         if (content) {
-            await fs.writeFile(targetPath, content.replace(/\n/g, eol));
+            await fs.writeFile(targetPath, content.replace(newline, eol), {
+                encoding: 'utf8',
+            });
         } else {
             await fs.copy(path.join(templateDir, relative, file), targetPath);
         }
@@ -56,7 +59,7 @@ async function init() {
                 await read(path.join(dir, file), path.join(relative, file));
             } else {
                 let content = '';
-                if (extReg.test(file) && eol === eolMap.crlf) {
+                if (extReg.test(file)) {
                     content = await fs.readFile(path.join(dir, file), 'utf8');
                 }
                 await write(file, relative, content);
