@@ -34,7 +34,8 @@ $ npm run dev
 
 **注意**
 
-`vue` 、 `vue3` 2 个模板只包含基本的配置，主要是为创建新的 vue 工程提供便利，要为新项目创建正式模板，需使用 [segma-vue-cli](http://npm.segma.tech/-/web/detail/@segma/segma-vue-cli)。
+`vue` 、 `vue3` 2 个模板只包含基本的配置，主要是为创建新的 vue 工程提供便利。  
+要为新项目创建正式模板，请使用`segma-vue`模板。
 
 `typescript` 模板作为 [template-typescript](https://github.com/RanSatious/segma-template-typescript) 的替代者，可使用该模板来创建新的 typescript 工程。
 
