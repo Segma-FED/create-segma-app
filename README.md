@@ -30,6 +30,7 @@ $ npm run dev
 
 -   `vue` (default)
 -   `vue3`
+-   `segma-vue`
 -   `typescript`
 
 **注意**
