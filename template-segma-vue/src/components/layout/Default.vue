@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-
+import auth from '../../plugins/mixins/auth';
 export default {
     name: 'DefaultLayout',
     components: {}
