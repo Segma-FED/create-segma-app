@@ -8,8 +8,8 @@ function addStyleResource(rule) {
         .options({
             patterns: [
                 resolve('src/assets/css/scroll.less'),
-                resolve('src/assets/css/var.less')
-            ]
+                resolve('src/assets/css/var.less'),
+            ],
         });
 }
 
@@ -41,11 +41,11 @@ module.exports = {
                 target: 'http://demo.com',
                 progress: false,
                 pathRewrite: {
-                    '^/api-local': '/'
-                }
-            }
-        }
+                    '^/api-local': '/',
+                },
+            },
+        },
     },
     assetsDir: 'assets',
-    publicPath: process.env.ENV_BASE_URL // 当使用基于 HTML5 history.pushState 的路由时不能使用相对路径
+    publicPath: process.env.ENV_BASE_URL, // 当使用基于 HTML5 history.pushState 的路由时不能使用相对路径
 };
