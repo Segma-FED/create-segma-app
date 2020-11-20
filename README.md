@@ -32,6 +32,7 @@ $ npm run dev
 -   `vue3`
 -   `segma-vue`
 -   `typescript`
+-   `empty`
 
 **注意**
 
