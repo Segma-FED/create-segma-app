@@ -1,6 +1,10 @@
+# 0.3.2 (2020-12-02)
+
+-   update dependencies.
+
 # 0.3.1 (2020-11-20)
 
--  update vue template.
+-   update vue template.
 
 # 0.2.8 (2020-11-10)
 
