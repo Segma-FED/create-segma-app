@@ -23,7 +23,7 @@ module.exports = {
         /**
          * 结尾必须有分号
          * */
-        'semi': [
+        semi: [
             'error',
             'always',
             {
@@ -31,20 +31,29 @@ module.exports = {
             }
         ],
         /**
-         * 强制使用 Unix 换行符
-         * */
-        'linebreak-style': ['error', 'unix'],
-        /**
          * vue模板属性换行配置
          * 文档：https://eslint.vuejs.org/rules/max-attributes-per-line.html
          * */
         'vue/max-attributes-per-line': [
-            'error', {
-                'singleline': 1,
-                'multiline': {
-                    'max': 1,
-                    'allowFirstLine': true
+            'error',
+            {
+                singleline: 1,
+                multiline: {
+                    max: 1,
+                    allowFirstLine: true
                 }
+            }
+        ],
+        'vue/no-duplicate-attributes': 'off',
+        'vue/no-deprecated-slot-scope-attribute': 'off',
+        'vue/no-deprecated-slot-attribute': 'off',
+        'vue/v-bind-style': 'off',
+        'no-unused-vars': [
+            'error',
+            {
+                vars: 'all',
+                args: 'none',
+                ignoreRestSiblings: true
             }
         ]
     },

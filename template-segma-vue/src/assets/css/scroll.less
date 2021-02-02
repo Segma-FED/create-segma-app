@@ -1,16 +1,31 @@
+//表格控件分割线/填充搜索框 Hover 背景色
+@table-border-color: #eff0f4;
+//滚动条凹槽背景色
+@scroll-bg: #f5f6fa;
+//滚动条bar背景色
+@scroll-bar-bg: #b6bece;
+//灰色 ICON
+@icon-color: #828992;
+
 /* 常用滚动条样式 */
-.scroll-bar(@width: 5px) {
+.scroll-bar(@width: 6px,@color:@scroll-bar-bg) {
     overflow: auto;
 
     &::-webkit-scrollbar-thumb {
         z-index: 999;
-        border-radius: 20px;
-        background-color: #dddddd;
+        border: 1px solid @scroll-bg;
+        border-radius: @width;
+        background-color: @color;
         cursor: pointer;
 
         &:hover {
-            background-color: rgba(136, 136, 136, 0.5);
+            background-color: @icon-color;
         }
+    }
+
+    &::-webkit-scrollbar-track-piece {
+        //滚动条凹槽的颜色，还可以设置边框属性
+        background-color: @scroll-bg;
     }
 
     &::-webkit-scrollbar {
@@ -19,6 +34,18 @@
     }
 
     &::-webkit-scrollbar-track {
-        border-radius: 20px;
+        border-radius: 0;
     }
+}
+
+.scroll-bar {
+    .scroll-bar(@width:6px);
+}
+
+.scroll-middle-bar {
+    .scroll-bar(@width: 8px);
+}
+
+.scroll-large-bar {
+    .scroll-bar(@width: 12px);
 }

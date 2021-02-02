@@ -13,9 +13,9 @@ export default {
     props: {
         name: {
             type: String,
-            default: ''
-        }
-    }
+            default: '',
+        },
+    },
 };
 </script>
 <style lang="less"
@@ -24,7 +24,7 @@ export default {
     overflow: hidden;
     width: 1em;
     height: 1em;
+    vertical-align: -0.15em;
     fill: currentColor;
-    vertical-align: middle;
 }
 </style>

@@ -7,10 +7,9 @@
     </div>
 </template>
 <script>
-import auth from '../../plugins/mixins/auth';
 export default {
     name: 'DefaultLayout',
-    components: {}
+    components: {},
 };
 </script>
 <style lang="less"
@@ -20,11 +19,11 @@ export default {
     position: relative;
 }
 
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active,.fade-leave-active {
     transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,.fade-leave-to {
     opacity: 0;
 }
 </style>
