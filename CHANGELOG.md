@@ -1,3 +1,7 @@
+# 0.3.3 (2021-02-02)
+
+-   update segma-vue template.
+
 # 0.3.2 (2020-12-02)
 
 -   update dependencies.
