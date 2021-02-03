@@ -1,3 +1,7 @@
+# 0.3.4 (2021-02-03)
+
+-   [tempalte/segma-vue] update messagebox default style.
+
 # 0.3.3 (2021-02-02)
 
 -   update segma-vue template.
