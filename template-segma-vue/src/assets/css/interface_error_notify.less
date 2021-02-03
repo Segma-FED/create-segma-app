@@ -1,0 +1,60 @@
+/* 接口错误提示弹窗样式 */
+@mainColor: #222222;
+
+@subColor: rgba(34, 34, 34, 0.75);
+
+.wrap-text {
+    overflow: hidden;
+    white-space: nowrap;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+}
+
+.el-message {
+    display: flex;
+    padding: 16px 20px;
+    max-width: 440px;
+    font-weight: 500;
+    color: @subColor;
+    align-items: flex-start;
+
+    & > p {
+        width: 100%;
+
+        & > p {
+            width: 100%;
+            color: rgba(34, 34, 34, 0.75);
+            .wrap-text;
+        }
+
+        & > p:not(:last-child) {
+            padding-bottom: 10px;
+        }
+    }
+
+    .el-message__content {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .icon-orange {
+        margin-top: -3px;
+        padding-right: 16px;
+        font-size: 20px;
+        color: #ff3333;
+    }
+
+    .el-message__title {
+        padding-bottom: 10px;
+        font-size: 16px;
+        color: @mainColor;
+        .wrap-text;
+    }
+
+    .el-message__closeBtn {
+        top: 25px;
+        color: @mainColor;
+    }
+}

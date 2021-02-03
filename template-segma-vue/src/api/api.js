@@ -3,11 +3,11 @@ import Vue from 'vue';
 
 const authMap = {
     segma: SegmaStrategy,
-    qingtui: QingtuiStrategy,
+    qingtui: QingtuiStrategy
 };
 export const AuthStrategy = authMap[process.env.VUE_APP_AUTH_TYPE] || {
     onUnauthorized: () => {},
-    onAuth: () => {},
+    onAuth: () => {}
 };
 export const $axios = ApiFactory({
     tip: (_message, _code, result) => {
@@ -16,7 +16,7 @@ export const $axios = ApiFactory({
             code: '错误码',
             traceId: '追踪ID',
             possibleReason: '可能原因',
-            suggestMeasure: '建议措施',
+            suggestMeasure: '建议措施'
         };
         let msgString = Object.keys(KEY_MAP).reduce((accumulator, currentValue) => {
             let key = KEY_MAP[currentValue];
@@ -26,22 +26,22 @@ export const $axios = ApiFactory({
         let titleMessage = title ? `<p class="el-message__title" title=${title}>${title}</p>` : '';
         let message = titleMessage + msgString;
         (Vue.prototype.$message || console.warn)({
-            iconClass: 'el-icon-warning-outline icon-orange',
+            iconClass: 'iconfont se-icon-f-warning icon-orange',
             customClass: 'el-message',
             dangerouslyUseHTMLString: true,
             message: message,
-            showClose: true,
+            showClose: true
         });
     },
     axiosConfig: {
-        baseURL: process.env.VUE_APP_BASE_API,
+        baseURL: process.env.VUE_APP_BASE_API
     },
-    auth: AuthStrategy,
+    auth: AuthStrategy
 });
 
 const buildApi = initBuilder({
     axios: $axios,
-    log: () => {},
+    log: () => {}
 });
 
 export { getToken, setToken, buildApi };
