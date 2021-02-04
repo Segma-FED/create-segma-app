@@ -32,3 +32,33 @@ export default new Router({
         }
     ]
 });
+
+// 在工业互联网平台中定义的菜单
+const getMenuConfig = () => {
+    try {
+        return JSON.parse(process.env.VUE_APP_MENU_CONFIG);
+    } catch (error) {
+        return {};
+    }
+};
+
+const redirectRoute = params => {
+    const config = getMenuConfig()[params.name];
+    if (window.parent !== window && config) {
+        const route = router.resolve(params).route;
+        const target = window.parent || window.opener;
+        target.postMessage(
+            {
+                type: 'setIframeRouterManual',
+                headerCode: config.head,
+                leafCode: config.leaf,
+                url: encodeURIComponent(`${location.origin}/#${route.fullPath}`)
+            },
+            '*'
+        );
+    } else {
+        router.push(params);
+    }
+};
+
+export { redirectRoute };
