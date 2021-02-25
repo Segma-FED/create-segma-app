@@ -1,3 +1,9 @@
+# 0.3.6 (2021-02-25)
+
+## template/segma-vue
+
+-   add commit msg validator.
+
 # 0.3.5 (2021-02-04)
 
 ## template/segma-vue
