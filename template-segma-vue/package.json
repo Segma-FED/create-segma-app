@@ -47,7 +47,7 @@
         "husky": "^4.3.8",
         "lint-staged": "^10.5.4",
         "sonarqube-scanner": "^2.8.0",
-        "stylelint": "^13.10.0",
+        "stylelint": "^15.10.1",
         "stylelint-config-standard": "^20.0.0",
         "stylelint-order": "^4.1.0"
     },
